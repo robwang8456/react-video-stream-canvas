@@ -1,0 +1,53 @@
+⭕
+
+ver 0.1 Tasks
+
+- Write Relase-note
+- Final check if there is a good name of useLink(wait for Robert's recommendation)
+- Change url of repo of this project
+- public git repo.
+- Readme.MD of demo project
+- Readme.MD
+
+- translate todo-file's content to English.  ⭕
+- Starndardize Naming ⭕
+- Camera devices number hint ⭕
+- npm publish ⭕
+- delete no-needs log-info ⭕
+- provide *useRef* usage directly ⭕
+- useLin functionalities: ⭕
+    Chain-Stream (Pay attention on one-object's two identities: source & target) ⭕
+    fit control（canvas） ⭕
+    canvas foreground/background interface ⭕
+- Component: ⭕
+    StreamVideo ⭕
+    StreamCanvas ⭕
+    CameraVideo ⭕
+    CameraCanvas ⭕
+- supoort one source only. ⭕
+- react-components：svc.Video, svc.Stream, svc.Canvas ⭕
+- solve import problem ⭕
+- split drawing from lib，make it to an indepenet module ⭕
+- demo: ⭕
+    components： ⭕
+    library ⭕
+- give a good name ⭕
+    *** ReactSVC  : React: stream-video-canvas ⭕
+    ReactCVS: React Canvas Video Stream ⭕
+
+bugs:
+- handle no-camera exception ⭕
+
+ver 0.2 Tasks
+- conditional log-output
+- Camera source selection
+- Canvas display multi-video-stream
+- Change Demo mode to pages(next-route), for accessing source-code easily
+- offer select camera ability if more than one cameras
+- multi-canvas(overlapped), with animation: moving / rotating the top canvas.
+
+ver 0.3 Tasks
+- implement fps justification. 
+- Vite-demo
+    needs moving demo to demo/next-demo
+    make new dir of demo/vite-demo

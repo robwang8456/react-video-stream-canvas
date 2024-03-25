@@ -1,0 +1,47 @@
+{
+  "name": "react-video-stream-component",
+  "description": "React Stream Video Canvas Utility",
+  "version": "1.0.0",
+  "author": "rwang8456",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "camera",
+    "stream",
+    "video",
+    "canvas"
+  ],
+  "main": "dist/cjs/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "rollup": "rollup -c --bundleConfigAsCjs"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^11.1.6",
+    "@types/react": "^18.2.55",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "tslib": "^2.6.2"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
+  },
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/robwang8456/react-video-stream-component.git"
+  },
+  "bugs": {
+    "url": "https://github.com/robwang8456/react-video-stream-component/issues"
+  },
+  "homepage": "https://github.com/robwang8456/react-video-stream-component#readme"
+}
