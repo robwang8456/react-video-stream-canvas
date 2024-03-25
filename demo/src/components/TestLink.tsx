@@ -6,7 +6,7 @@ import { DemoItem } from "./Test";
 
 // todo: delete before publish.
 // import ReactVSC, { DrawInfo } from "../../../src/index";
-import ReactVSC, { DrawInfo } from "react-video-stream-component";
+import ReactVSC, { DrawInfo } from "react-video-stream-canvas";
 
 function DrawOnCanvas() {
 

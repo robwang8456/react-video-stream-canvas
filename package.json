@@ -1,7 +1,7 @@
 {
-  "name": "react-video-stream-component",
+  "name": "react-video-stream-canvas",
   "description": "React Stream Video Canvas Utility",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "rwang8456",
   "license": "MIT",
   "keywords": [

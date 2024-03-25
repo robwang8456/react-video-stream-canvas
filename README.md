@@ -13,7 +13,7 @@ Especially in React's strict mode, resources leakage appeares frequently even wi
 
 ## Installation
 ```
-npm i react-video-stream-component
+npm i react-video-stream-canvas
 ```
 
 ## Watch Demo
@@ -56,7 +56,7 @@ When these components inside other stream-like component, will link to upper str
 
 **Link camera to video**
 ```
-    import { useCamera, useLink, useVideoRef } from "react-video-stream-component";
+    import { useCamera, useLink, useVideoRef } from "react-video-stream-canvas";
 
     const videoRef = useVideoRef();
     const camera = useCamera();
@@ -68,7 +68,7 @@ Camera will streaming on Video element. You can handle video element as ususal.
 
 **Link camera to canvas**
 ```
-    import { useCamera, useLink, useCanvasRef } from "react-video-stream-component";
+    import { useCamera, useLink, useCanvasRef } from "react-video-stream-canvas";
 
     const canvasRef = useCanvasRef();
     const camera = useCamera();
@@ -80,7 +80,7 @@ Camera will streaming on Canvas element.
 
 **Link video to canvas**
 ```
-    import { useLink, useCanvasRef } from "react-video-stream-component";
+    import { useLink, useCanvasRef } from "react-video-stream-canvas";
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useCanvasRef();
@@ -98,7 +98,7 @@ Video will play on Canvas element.
 
 **Chain link streams: Camera -> Video -> Canvas -> Video -> Canvas.**
 ```
-    import { useLink } from "react-video-stream-component";
+    import { useLink } from "react-video-stream-canvas";
 
     const camera = ReactVSC.useCamera({ video: true, audio: false });
     const v0 = useRef<HTMLVideoElement>(null);
