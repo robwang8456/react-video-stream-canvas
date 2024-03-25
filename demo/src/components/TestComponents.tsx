@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Camera, Stream, CameraCanvas, CameraVideo, Canvas, Video } from "react-canvas-video-stream";
+import { Camera, Stream, CameraCanvas, CameraVideo, Canvas, Video } from "react-video-stream-component";
 import Toggler from "./Toggler";
 import React from "react";
 import { DemoItem } from "./Test";

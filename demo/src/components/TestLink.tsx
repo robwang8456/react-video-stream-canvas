@@ -5,8 +5,8 @@ import { UIContext } from "./UISetting";
 import { DemoItem } from "./Test";
 
 // todo: delete before publish.
-// import ReactCVS, { DrawInfo } from "../../../src/index";
-import ReactCVS, { DrawInfo } from "react-canvas-video-stream";
+// import ReactVSC, { DrawInfo } from "../../../src/index";
+import ReactVSC, { DrawInfo } from "react-video-stream-component";
 
 function DrawOnCanvas() {
 
@@ -36,9 +36,9 @@ function DrawOnCanvas() {
         };
     }, []);
 
-    const canvasRef = ReactCVS.useCanvasRef(drawCallbacks);
+    const canvasRef = ReactVSC.useCanvasRef(drawCallbacks);
 
-    ReactCVS.useLink(canvasRef, videoRef);
+    ReactVSC.useLink(canvasRef, videoRef);
 
     return (
         <>
@@ -80,7 +80,7 @@ function LinkVideoToCanvas() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useRef<HTMLCanvasElement>(null);
 
-    ReactCVS.useLink(canvasRef, videoRef);
+    ReactVSC.useLink(canvasRef, videoRef);
 
     return (
         <>
@@ -116,16 +116,16 @@ function LinkVideoToCanvas() {
     );
 }
 
-function SwitchSourcesPart({ target, srcIndex }: { target: ReactCVS.StreamLike; srcIndex: number; }) {
+function SwitchSourcesPart({ target, srcIndex }: { target: ReactVSC.StreamLike; srcIndex: number; }) {
 
-    const camera = ReactCVS.useCamera();
+    const camera = ReactVSC.useCamera();
     const srcRef0 = useRef<HTMLVideoElement>(null);
     const srcRef1 = useRef<HTMLVideoElement>(null);
 
     const sourceRef = srcIndex ? srcRef1 : srcRef0;
 
-    ReactCVS.useLink(srcRef1, camera);
-    ReactCVS.useLink(target, sourceRef);
+    ReactVSC.useLink(srcRef1, camera);
+    ReactVSC.useLink(target, sourceRef);
 
     return (
         <>
@@ -235,7 +235,7 @@ function LinkVideoToVideo() {
     const videoRef0 = useRef<HTMLVideoElement>(null);
     const videoRef1 = useRef<HTMLVideoElement>(null);
 
-    ReactCVS.useLink(videoRef1, videoRef0);
+    ReactVSC.useLink(videoRef1, videoRef0);
 
     return (
         <div className="container flex gap-2 p-2 w-128 mt-2 border-2 bg-slate-500"
@@ -276,13 +276,13 @@ function LinkVideoToVideo() {
 function LinkCameraCanvas() {
 
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const camera = ReactCVS.useCamera({ video: true, audio: false });
+    const camera = ReactVSC.useCamera({ video: true, audio: false });
 
     const fits = ["contain", "fill", "cover", "none", "scale-down"];
     const [fitIndex, setFitIndex] = useState(0);
     function nextFit() { setFitIndex((fitIndex + 1) % fits.length); }
 
-    ReactCVS.useLink(canvasRef, camera);
+    ReactVSC.useLink(canvasRef, camera);
 
     return (
         <>
@@ -309,9 +309,9 @@ function LinkCameraCanvas() {
 function LinkCameraVideo() {
 
     const videoRef = React.useRef(null);
-    const camera = ReactCVS.useCamera({ video: true, audio: false });
+    const camera = ReactVSC.useCamera({ video: true, audio: false });
 
-    ReactCVS.useLink(videoRef, camera);
+    ReactVSC.useLink(videoRef, camera);
 
     return (
         <div className="flex justify-center p-2 w-128 mt-2 border-2 bg-slate-500" >
@@ -326,16 +326,16 @@ function LinkCameraVideo() {
 
 function LinkChain() {
 
-    const camera = ReactCVS.useCamera({ video: true, audio: false });
+    const camera = ReactVSC.useCamera({ video: true, audio: false });
     const v0 = useRef<HTMLVideoElement>(null);
     const c0 = useRef<HTMLCanvasElement>(null);
     const v1 = useRef<HTMLVideoElement>(null);
     const c1 = useRef<HTMLCanvasElement>(null);
 
-    ReactCVS.useLink(v0, camera);
-    ReactCVS.useLink(c0, v0);
-    ReactCVS.useLink(v1, c0);
-    ReactCVS.useLink(c1, v1);
+    ReactVSC.useLink(v0, camera);
+    ReactVSC.useLink(c0, v0);
+    ReactVSC.useLink(v1, c0);
+    ReactVSC.useLink(c1, v1);
 
     return (
         <div className="flex gap-2 p-2 w-128 h-64 mt-2 border-2 bg-slate-500" >

@@ -13,7 +13,7 @@ Especially in React's strict mode, resources leakage appeares frequently even wi
 
 ## Installation
 ```
-npm i react-canvas-video-stream
+npm i react-video-stream-component
 ```
 
 ## Watch Demo
@@ -56,7 +56,7 @@ When these components inside other stream-like component, will link to upper str
 
 **Link camera to video**
 ```
-    import { useCamera, useLink, useVideoRef } from "react-canvas-video-stream";
+    import { useCamera, useLink, useVideoRef } from "react-video-stream-component";
 
     const videoRef = useVideoRef();
     const camera = useCamera();
@@ -68,7 +68,7 @@ Camera will streaming on Video element. You can handle video element as ususal.
 
 **Link camera to canvas**
 ```
-    import { useCamera, useLink, useCanvasRef } from "react-canvas-video-stream";
+    import { useCamera, useLink, useCanvasRef } from "react-video-stream-component";
 
     const canvasRef = useCanvasRef();
     const camera = useCamera();
@@ -80,7 +80,7 @@ Camera will streaming on Canvas element.
 
 **Link video to canvas**
 ```
-    import { useLink, useCanvasRef } from "react-canvas-video-stream";
+    import { useLink, useCanvasRef } from "react-video-stream-component";
 
     const videoRef = useRef<HTMLVideoElement>(null);
     const canvasRef = useCanvasRef();
@@ -98,18 +98,18 @@ Video will play on Canvas element.
 
 **Chain link streams: Camera -> Video -> Canvas -> Video -> Canvas.**
 ```
-    import { useLink } from "react-canvas-video-stream";
+    import { useLink } from "react-video-stream-component";
 
-    const camera = ReactCVS.useCamera({ video: true, audio: false });
+    const camera = ReactVSC.useCamera({ video: true, audio: false });
     const v0 = useRef<HTMLVideoElement>(null);
     const c0 = useRef<HTMLCanvasElement>(null);
     const v1 = useRef<HTMLVideoElement>(null);
     const c1 = useRef<HTMLCanvasElement>(null);
 
-    ReactCVS.useLink(v0, camera);
-    ReactCVS.useLink(c0, v0);
-    ReactCVS.useLink(v1, c0);
-    ReactCVS.useLink(c1, v1);
+    ReactVSC.useLink(v0, camera);
+    ReactVSC.useLink(c0, v0);
+    ReactVSC.useLink(v1, c0);
+    ReactVSC.useLink(c1, v1);
 
     return  (<>
         <video ref={v0} autoPlay playsInline />

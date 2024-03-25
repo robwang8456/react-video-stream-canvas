@@ -25,15 +25,15 @@ ver 0.1 Tasks
     CameraVideo ⭕
     CameraCanvas ⭕
 - supoort one source only. ⭕
-- react-components：svc.Video, svc.Stream, svc.Canvas ⭕
+- react-components：VSC.Video, VSC.Stream, VSC.Canvas ⭕
 - solve import problem ⭕
 - split drawing from lib，make it to an indepenet module ⭕
 - demo: ⭕
     components： ⭕
     library ⭕
 - give a good name ⭕
-    *** ReactSVC  : React: stream-video-canvas ⭕
-    ReactCVS: React Canvas Video Stream ⭕
+    *** ReactVSC  : React: stream-video-canvas ⭕
+    ReactVSC: React Canvas Video Stream ⭕
 
 bugs:
 - handle no-camera exception ⭕

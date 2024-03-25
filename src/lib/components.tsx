@@ -1,30 +1,30 @@
 import assert from "assert";
-import * as ReactCVS from "./link";
+import * as ReactVSC from "./link";
 import React, { RefObject, useContext, useEffect, useRef } from "react";
 
-type SVCContextType = { ref?: RefObject<HTMLVideoElement> | RefObject<HTMLCanvasElement>; };
+type VSCContextType = { ref?: RefObject<HTMLVideoElement> | RefObject<HTMLCanvasElement>; };
 
-const SVCContext = React.createContext<SVCContextType>({});
+const VSCContext = React.createContext<VSCContextType>({});
 
-type SourceProps = { source: ReactCVS.StreamLike; };
+type SourceProps = { source: ReactVSC.StreamLike; };
 
 function LinkUpward(props: SourceProps) {
-    const context = useContext(SVCContext);
+    const context = useContext(VSCContext);
 
     useEffect(() => {
         assert(context.ref);
 
-        const [target, source] = ReactCVS.link(context.ref, props.source, true);
-        return () => { ReactCVS.unlink(target, source, true); };
+        const [target, source] = ReactVSC.link(context.ref, props.source, true);
+        return () => { ReactVSC.unlink(target, source, true); };
     }, [context, props.source]);
 
     return <></>;
 }
 
-type StreamProps = { source: ReactCVS.StreamLike; };
+type StreamProps = { source: ReactVSC.StreamLike; };
 
 function Stream(props: StreamProps) {
-    const context = useContext(SVCContext);
+    const context = useContext(VSCContext);
     assert(context.ref, "No StreamObject in Context, should contain Camera!");
 
     return <LinkUpward source={props.source} />;
@@ -33,7 +33,7 @@ function Stream(props: StreamProps) {
 type CameraProps = { constraints?: MediaStreamConstraints; };
 
 function Camera(props: CameraProps) {
-    const camera = ReactCVS.useCamera(props.constraints ?? { audio: true, video: true });
+    const camera = ReactVSC.useCamera(props.constraints ?? { audio: true, video: true });
     return <Stream source={camera} />;
 }
 
@@ -41,24 +41,24 @@ type VideoProps = React.DetailedHTMLProps<React.VideoHTMLAttributes<HTMLVideoEle
     & { childrend?: React.ReactNode; };
 
 function Video(props: VideoProps) {
-    const ref = ReactCVS.useVideoRef();
-    const context = useContext(SVCContext);
+    const ref = ReactVSC.useVideoRef();
+    const context = useContext(VSCContext);
 
     return (
         <>
             {context.ref && <LinkUpward source={ref} />}
             <video ref={ref} {...props} >
-                <SVCContext.Provider value={{ ref }}>
+                <VSCContext.Provider value={{ ref }}>
                     {props.children}
-                </SVCContext.Provider>
+                </VSCContext.Provider>
             </video>
         </>
     );
 }
 
-function VideoWithSource(props: VideoProps & { source: ReactCVS.StreamLike; }) {
+function VideoWithSource(props: VideoProps & { source: ReactVSC.StreamLike; }) {
     const videoRef = useRef<HTMLVideoElement>(null);
-    ReactCVS.useLink(videoRef, props.source);
+    ReactVSC.useLink(videoRef, props.source);
 
     return (
         <video ref={videoRef} {...props} >
@@ -72,7 +72,7 @@ function StreamVideo(props: VideoProps & { stream: MediaStream; }) {
 }
 
 function CameraVideo(props: VideoProps & { constraints?: MediaStreamConstraints; }) {
-    const camera = ReactCVS.useCamera(props.constraints);
+    const camera = ReactVSC.useCamera(props.constraints);
     return <VideoWithSource {...props} source={camera} />;
 }
 
@@ -81,13 +81,13 @@ type CanvasProps =
     & { childrend?: React.ReactNode; };
 
 function Canvas(props: CanvasProps) {
-    const ref = ReactCVS.useCanvasRef();
-    const context = useContext(SVCContext);
+    const ref = ReactVSC.useCanvasRef();
+    const context = useContext(VSCContext);
 
     const canvasTag = <canvas ref={ref} {...props} >
-        <SVCContext.Provider value={{ ref }}>
+        <VSCContext.Provider value={{ ref }}>
             {props.children}
-        </SVCContext.Provider>
+        </VSCContext.Provider>
     </canvas>;
 
     return (
@@ -98,9 +98,9 @@ function Canvas(props: CanvasProps) {
     );
 }
 
-function CanvasWithSource(props: CanvasProps & { source: ReactCVS.StreamLike; }) {
+function CanvasWithSource(props: CanvasProps & { source: ReactVSC.StreamLike; }) {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    ReactCVS.useLink(canvasRef, props.source);
+    ReactVSC.useLink(canvasRef, props.source);
 
     return <canvas {...props} ref={canvasRef}>
         {props.children}
@@ -112,7 +112,7 @@ function StreamCanvas(props: CanvasProps & { stream: MediaStream; }) {
 }
 
 function CameraCanvas(props: CanvasProps & { constraints?: MediaStreamConstraints; }) {
-    const camera = ReactCVS.useCamera(props.constraints);
+    const camera = ReactVSC.useCamera(props.constraints);
     return <CanvasWithSource {...props} style={{ objectFit: "contain" }} source={camera} />;
 }
 

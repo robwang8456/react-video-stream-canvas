@@ -1,4 +1,4 @@
 export * from "./lib";
 
-import * as ReactCVS from "./lib";
-export default ReactCVS;
+import * as ReactVSC from "./lib";
+export default ReactVSC;
