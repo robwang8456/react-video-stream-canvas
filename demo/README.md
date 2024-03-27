@@ -107,3 +107,36 @@ The video will be transfered to play on a canvas element.
 ```
 
 In this example, we linked the camera feed to a video element, then a canvas element, then back to a video element, then finally to a canvas element.
+
+## Comparison to linking streams using traditional components
+**Render webcamera stream in Video element:**
+```
+    <Video>
+        <Camera />
+    </Video>
+```
+
+**Render webcamera stream in Canvas element:**
+```
+    <Canvas>
+        <Camera />
+    </Canvas>
+```
+
+**Render stream on Canvas:**
+```
+    <Canvas>
+        <Stream source={stream} />
+    </Canvas>
+```
+One example of the stream here can be a WebRTC remote stream.
+
+**Render normal video stream in Canvas element.**
+```
+    <Canvas>
+        <Video>
+            <source src="/video/chrome.mp4" type="video/mp4" />
+            <source src="/video/chrome.webm" type="video/webm" />
+        </Video>
+    </Canvas>
+```
