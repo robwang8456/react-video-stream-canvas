@@ -3,11 +3,11 @@
 ver 0.1 Tasks
 
 - Write Relase-note
-- Final check if there is a good name of useLink(wait for Robert's recommendation) 
+- Final check if there is a good name of useLink(wait for Robert's recommendation) ⭕
 - Change url of repo of this project ⭕
 - public git repo. ⭕
-- Readme.MD of demo project
-- Readme.MD
+- Readme.MD of demo project ⭕
+- Readme.MD ⭕
 
 - translate todo-file's content to English.  ⭕
 - Starndardize Naming ⭕
