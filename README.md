@@ -31,7 +31,7 @@ You can see the usages of Hooks and Components.
 ### useLink(target, source)
 Link two streamed HTMLElements, pipe source's stream to target.
 
-**Refer to README.md(https://github.com/robwang8456/react-video-stream-canvas/blob/0.1/demo/README.md) in demo folder for refence of useLink**
+**Refer to [README.md](https://github.com/robwang8456/react-video-stream-canvas/blob/0.1/demo/README.md) in demo folder for refence of useLink**
 
 ### useCamera(constraints?: MediaStreamConstraints): Promise<MediaStream>
 return a Camera object initiated with constraints, just like:
