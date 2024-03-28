@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import TestComponents from "./TestComponents";
 import TestLink from "./TestLink";
+import Link from "next/link";
 
 type TogglerProp = {
     title?: string;
@@ -80,11 +81,13 @@ function Test() {
             </div>
 
             <div className="m-4">
-                <TestLink />
+                {/* <TestLink /> */}
+                <Link href="/components/link_test">useLink demos</Link>
             </div>
 
             <div className="m-4">
-                <TestComponents />
+                {/* <TestComponents /> */}
+                <Link href="/components/component_test">Components demos</Link>
             </div>
 
         </>

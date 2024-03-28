@@ -1,6 +1,6 @@
 "use client";
 
-import Test from "@/components/Test";
+import Test from "@/app/components/Test";
 
 export default function Home() {
     return <Test />;

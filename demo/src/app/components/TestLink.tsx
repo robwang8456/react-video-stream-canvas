@@ -1,11 +1,8 @@
 
-import Toggler from "@/components/Toggler";
+import Toggler from "@/app/components/Toggler";
 import React, { useContext, useMemo, useRef, useState } from "react";
 import { UIContext } from "./UISetting";
 import { DemoItem } from "./Test";
-
-// todo: delete before publish.
-// import ReactVSC, { DrawInfo } from "../../../src/index";
 import ReactVSC, { DrawInfo } from "react-video-stream-canvas";
 
 function DrawOnCanvas() {
