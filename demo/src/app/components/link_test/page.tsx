@@ -5,7 +5,7 @@ export default function page() {
   return (
     <>
       <div className="text-black font-bold py-1 px-4 rounded text-3xl">
-        ReactVSC: react-video-stream-canvas useLink() Demos
+        useLink() Demos
       </div>
       <div className="m-4">
         <div className="m-4">
@@ -26,14 +26,16 @@ export default function page() {
         </div>
 
         <div className="m-4">
-          <Link href="/components/link_test/switch_source_video">Switch source video</Link>
+          <Link href="/components/link_test/switch_source_video">Switch video source</Link>
         </div>
         <div className="m-4">
-          <Link href="/components/link_test/switch_source_canvas">Switch source canvas</Link>
+          <Link href="/components/link_test/switch_source_canvas">Switch canvas source</Link>
         </div>
-
         <div className="m-4">
           <Link href="/components/link_test/link_chain">Link chain</Link>
+        </div>
+        <div className="m-4 font-bold">
+          <Link href="/">Return to homepage</Link>
         </div>
       </div>
     </>

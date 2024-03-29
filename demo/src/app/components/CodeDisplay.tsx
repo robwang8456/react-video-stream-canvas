@@ -7,15 +7,16 @@ type CodeProp = {
 };
 
 function CodeDisplay({fileName}: CodeProp) {
-    const fs = require('fs');
-    const fileContent = fs.readFileSync(fileName, 'utf8');
-  const escapedContent = encodeURIComponent(fileContent);
+  //   const fs = require('fs');
+  //   const fileContent = fs.readFileSync(fileName, 'utf8');
+  // const escapedContent = encodeURIComponent(fileContent);
 
-  return (
-    <pre>
-        <code>{escapedContent}</code>
-    </pre>
-  );
+  // return (
+  //   <pre>
+  //       <code>{escapedContent}</code>
+  //   </pre>
+  // );
+  return <div>Hello!</div>
 }
 
 export default CodeDisplay;
